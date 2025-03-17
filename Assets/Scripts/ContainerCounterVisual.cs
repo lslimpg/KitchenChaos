@@ -10,7 +10,6 @@ public class ContainerCounterVisual : MonoBehaviour {
 
     private void Awake() {
         animator = GetComponent<Animator>();
-        containerCounter.OnPlayerGrabbedObject += ContainerCounter_OnPlayerGrabbedObject;
     }
 
     private void Start() {
