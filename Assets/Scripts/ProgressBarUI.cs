@@ -13,16 +13,6 @@ public class ProgressBarUI : MonoBehaviour {
         Hide();
     }
 
-    // private void Update() {
-    //     if (cuttingCounter.HasKitchenObject()) {
-    //         // Only show the progress bar if there is a kitchen object being cut
-    //         Show();
-    //     } else {
-    //         // Hide the progress bar if there is no kitchen object
-    //         Hide();
-    //     }
-    // }
-
     private void CuttingCounter_OnProgressChanged(object sender, CuttingCounter.OnCuttingProgressChangedEventArgs e) {
         barImage.fillAmount = e.cuttingProgressNormalized;
     
