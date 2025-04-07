@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5700540696337177986}
+  - {fileID: 2250828342327738941}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-8980522668885452882
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kitchenObjectSO: {fileID: 11400000, guid: c07415ee085005b3e88476d7d5635630, type: 2}
---- !u!1001 &8932446227328224002
+--- !u!1001 &3158856743038686397
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -114,9 +114,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b7e90f95929c04c8394768d8bd1d14, type: 3}
---- !u!4 &5700540696337177986 stripped
+--- !u!4 &2250828342327738941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3812876574508226176, guid: 44b7e90f95929c04c8394768d8bd1d14,
     type: 3}
-  m_PrefabInstance: {fileID: 8932446227328224002}
+  m_PrefabInstance: {fileID: 3158856743038686397}
   m_PrefabAsset: {fileID: 0}

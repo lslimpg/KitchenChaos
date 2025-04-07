@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5471876249765210037}
+  - {fileID: 3230604838726525845}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-8980522668885452882
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kitchenObjectSO: {fileID: 11400000, guid: be6beb738b436bc3a985db59a031e157, type: 2}
---- !u!1001 &9158647627999244597
+--- !u!1001 &1747228365683389717
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -107,16 +107,16 @@ PrefabInstance:
     - target: {fileID: 3812876574508226177, guid: 0df961a7e3870b44f9bbce7bdf930613,
         type: 3}
       propertyPath: m_Name
-      value: MeatPattyBurnt_Visual
+      value: MeatPattyBurned_Visual
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df961a7e3870b44f9bbce7bdf930613, type: 3}
---- !u!4 &5471876249765210037 stripped
+--- !u!4 &3230604838726525845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3812876574508226176, guid: 0df961a7e3870b44f9bbce7bdf930613,
     type: 3}
-  m_PrefabInstance: {fileID: 9158647627999244597}
+  m_PrefabInstance: {fileID: 1747228365683389717}
   m_PrefabAsset: {fileID: 0}
