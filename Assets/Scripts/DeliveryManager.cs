@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour {
 
     public event EventHandler OnRecipeSpawned;
     public event EventHandler OnRecipeCompleted;
+    public event EventHandler OnRecipeSuccess;
+    public event EventHandler OnRecipeFailed;
 
     public static DeliveryManager Instance { get; private set; }
     [SerializeField] private RecipeListSO recipeListSO;
@@ -35,10 +38,10 @@ public class DeliveryManager : MonoBehaviour {
 
     public void DeliverRecipe(PlateKitchenObject plateKitchenObject) {
         List<KitchenObjectSO> plateKitchenObjectSOList = plateKitchenObject.GetKitchenObjectSOList();
+        bool plateContentsMatchesRecipe = true;
 
         foreach (RecipeSO waitingRecipeSO in waitingRecipeSOList) {
             if (waitingRecipeSO.kitchenObjectSOList.Count == plateKitchenObjectSOList.Count) {
-                bool plateContentsMatchesRecipe = true;
                 foreach (KitchenObjectSO recipeKitchenObjectSO in waitingRecipeSO.kitchenObjectSOList) {
                     if (!plateKitchenObjectSOList.Contains(recipeKitchenObjectSO)) {
                         plateContentsMatchesRecipe = false;
@@ -48,11 +51,16 @@ public class DeliveryManager : MonoBehaviour {
                 if (plateContentsMatchesRecipe) {
                     Debug.Log("Delivered: " + waitingRecipeSO.recipeName);
                     waitingRecipeSOList.Remove(waitingRecipeSO);
+
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
+                    OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
                     return;
                 }
             }
         }
+
+        Debug.Log("Failed: " + plateKitchenObjectSOList.Count + " != " + waitingRecipeSOList.Count);
+        OnRecipeFailed?.Invoke(this, EventArgs.Empty);
     }
 
     public List<RecipeSO> GetWaitingRecipeSOList() {
