@@ -38,9 +38,9 @@ public class DeliveryManager : MonoBehaviour {
 
     public void DeliverRecipe(PlateKitchenObject plateKitchenObject) {
         List<KitchenObjectSO> plateKitchenObjectSOList = plateKitchenObject.GetKitchenObjectSOList();
-        bool plateContentsMatchesRecipe = true;
 
         foreach (RecipeSO waitingRecipeSO in waitingRecipeSOList) {
+            bool plateContentsMatchesRecipe = true;
             if (waitingRecipeSO.kitchenObjectSOList.Count == plateKitchenObjectSOList.Count) {
                 foreach (KitchenObjectSO recipeKitchenObjectSO in waitingRecipeSO.kitchenObjectSOList) {
                     if (!plateKitchenObjectSOList.Contains(recipeKitchenObjectSO)) {
